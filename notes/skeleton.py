@@ -28,7 +28,7 @@ from synesthesus import __version__
 
 __author__ = "Eric Norman"
 __copyright__ = "Eric Norman"
-__license__ = "MIT"
+__license__ = "None"
 
 _logger = logging.getLogger(__name__)
 
