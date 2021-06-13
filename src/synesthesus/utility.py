@@ -1,9 +1,9 @@
-import argparse
-import asyncio
-from kasa import Discover
+import argparse, asyncio
+from typing import Any
+from kasa import Discover # type: ignore
 
 
-def parse_args(prog: str, argv: list) -> any:
+def parse_args(prog: str, argv: list) -> Any:
     """Verbose will be determined here"""
     parser = argparse.ArgumentParser(prog)
     parser.add_argument(

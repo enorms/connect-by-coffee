@@ -5,23 +5,22 @@ CLI options:
     -t run test program
     -v verbose printouts
 """
-
-import argparse
-import logging
-import sys
-
-from synesthesus import __version__
-
 __author__ = "Eric Norman"
 __copyright__ = "Eric Norman"
 __license__ = "None"
 
-_logger = logging.getLogger(__name__)
-
+import argparse
+import logging
+import sys
+from typing import Any
 import asyncio, argparse, atexit, sys, time
 from synesthesus.bulb import Bulb, HSV
 from synesthesus.plug import Plug
 from synesthesus.utility import parse_args
+from synesthesus.globals import HSV, HUE, SATURATION, VALUE
+from synesthesus import __version__
+
+_logger = logging.getLogger(__name__)
 
 SHORT_TRANSITION = 2000  # ms
 
@@ -52,17 +51,18 @@ async def setup_bulb(bulb: Bulb, color: str = "BLUE", verbose: int = 0) -> None:
     assert color in HSV
     await bulb.off(transition=SHORT_TRANSITION)
     await asyncio.sleep(SHORT_TRANSITION / 1000)
-    hue, saturation, value = 0, HSV.get(color)[1], 0
+    hue: int = HSV.get(color, {}).get(HUE, 0)
+    saturation: int = HSV.get(color, {}).get(SATURATION, 0)
+    value: int = HSV.get(color, {}).get(VALUE, 0)
     await bulb.set_hsv(
         hue=hue, saturation=saturation, value=value, transition=SHORT_TRANSITION
     )
     await asyncio.sleep(SHORT_TRANSITION / 1000)
-    hue, saturation, value = HSV.get(color)[0], HSV.get(color)[1], 100
     await bulb.set_hsv(
         hue=hue, saturation=saturation, value=value, transition=SHORT_TRANSITION
     )
     await asyncio.sleep(SHORT_TRANSITION / 1000)
-    hue, saturation, value = 0, HSV.get(color)[1], 0
+    hue, value = 0, 0
     await bulb.set_hsv(
         hue=hue, saturation=saturation, value=value, transition=SHORT_TRANSITION
     )
@@ -112,7 +112,7 @@ def map_power_to_brightness(power_mw, verbose=0):
     return brightness
 
 
-async def _setup_devices(host_bulb, host_plug, color="BLUE", verbose=0) -> any:
+async def _setup_devices(host_bulb, host_plug, color="BLUE", verbose=0) -> Any:
     """Return devices"""
     plug = Plug(verbose=verbose, host=host_plug)
     await setup_plug(plug=plug, verbose=verbose)

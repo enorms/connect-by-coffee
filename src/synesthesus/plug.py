@@ -16,7 +16,8 @@ Reference
 
 """
 import asyncio, atexit, sys, time
-from kasa import SmartPlug, SmartDeviceException
+from typing import Any
+from kasa import SmartPlug, SmartDeviceException # type: ignore
 from synesthesus.utility import parse_args
 
 
@@ -34,13 +35,13 @@ class Plug:
 
     """
 
-    def __init__(self: any, host: str, verbose: int = 0) -> None:
+    def __init__(self: Plug, host: str, verbose: int = 0) -> None:
         """Does not update state since async"""
         assert "." in host
         self.plug = SmartPlug(host)
-        self._state = dict()
+        self._state = dict[Any, Any]()
 
-    async def update_state(self: any, verbose: int = 0) -> dict:
+    async def update_state(self: Any, verbose: int = 0) -> dict:
         """Use like
         print(await plug.state())
 
@@ -66,7 +67,7 @@ class Plug:
         except [
             AssertionError,
             ConnectionResetError,
-            SmartDeviceException,
+            SmartDeviceException, # type: ignore
             TypeError,
         ] as e:
             sys.exit(["exiting"])
@@ -103,7 +104,7 @@ class Plug:
         return self._state
 
     async def led_off(
-        self: any,
+        self: Any,
         verbose: int = 0,
     ) -> bool:
         """
@@ -113,12 +114,12 @@ class Plug:
         await self.state()
         return self.plug.led
 
-    async def led_on(self: any, verbose: int = 0) -> bool:
+    async def led_on(self: Any, verbose: int = 0) -> bool:
         await self.plug.set_led(False)
         await self.plug.update_state()
         return self.plug.led
 
-    async def on(self: any, verbose: int = 0) -> bool:
+    async def on(self: Any, verbose: int = 0) -> bool:
         """
         Turn on and return true if on
         """
@@ -131,7 +132,7 @@ class Plug:
             print("[Plug] did turn on")
         return await self.is_on()
 
-    async def off(self: any, verbose: int = 0) -> bool:
+    async def off(self: Any, verbose: int = 0) -> bool:
         """
         Turns off and return true if off
         """
@@ -144,21 +145,21 @@ class Plug:
             print("[Plug] did turn off")
         return await self.is_off()
 
-    async def is_on(self: any, verbose: int = 0) -> bool:
+    async def is_on(self: Any, verbose: int = 0) -> bool:
         """Returns value of power state"""
         await self.update_state()
         if verbose > 0:
             print("[Plug] is_on:", self.plug.is_on)
         return self.plug.is_on
 
-    async def is_off(self: any, verbose: int = 0) -> bool:
+    async def is_off(self: Any, verbose: int = 0) -> bool:
         """Returns value of power state"""
         await self.update_state()
         if verbose > 0:
             print("[Plug] is_off:", not self.plug.is_on)
         return not self.plug.is_on
 
-    async def get_power(self: any, verbose: int = 0) -> int:
+    async def get_power(self: Any, verbose: int = 0) -> int:
         """returns emeter_realtime_power_mw"""
         await self.update_state()
         if verbose > 0:

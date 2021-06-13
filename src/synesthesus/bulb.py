@@ -4,13 +4,12 @@
 """
 import asyncio, atexit, sys
 from pprint import pprint
-from typing import Dict
-from kasa import SmartBulb, SmartDeviceException
-from utility import parse_args
+from typing import Any, Dict, Optional
+from kasa import SmartBulb, SmartDeviceException # type: ignore
+from synesthesus.utility import parse_args
+from synesthesus.globals import HSV, HUE, SATURATION, VALUE
 
-HSV = {"RED": (0, 100, 100), "GREEN": (120, 100, 100), "BLUE": (240, 100, 100)}
 DEFAULT_TRANSITION = 10_000
-
 
 class Bulb:
     """
@@ -23,15 +22,15 @@ class Bulb:
 
     """
 
-    def __init__(self: any, host: str, verbose: int = 0) -> None:
+    def __init__(self: Bulb, host: str, verbose: int = 0) -> None:
         assert "." in host
-        self.bulb = SmartBulb(host)
-        self._state = dict()
-        self.verbose = verbose
+        self.bulb: Any = SmartBulb(host)
+        self._state = dict[Any, Any]()
+        self.verbose: int = verbose
         if self.verbose > 0:
             print("[Bulb] did init")
 
-    async def update_state(self: any) -> None:
+    async def update_state(self: Any) -> None:
         """Must be run before some commands (like set_hsv())"""
         await self.bulb.update()
         for k, v in self.bulb.state_information.items():
@@ -42,17 +41,17 @@ class Bulb:
         if self.verbose > 1:
             print("[Bulb] did update state")
 
-    async def is_off(self: any) -> bool:
+    async def is_off(self: Any) -> bool:
         """Update state and return true if *not* on"""
         await self.update_state()
         return not self._state.get("is_on")
 
-    async def is_on(self: any) -> bool:
+    async def is_on(self: Any) -> bool:
         """Update state and return true if on"""
         await self.update_state()
         return self._state.get("is_on")
 
-    async def off(self: any, transition: int = DEFAULT_TRANSITION) -> bool:
+    async def off(self: Any, transition: int = DEFAULT_TRANSITION) -> bool:
         """
         Turn off and return true if off
 
@@ -70,7 +69,7 @@ class Bulb:
             print("[Bulb] did turn off")
         return await self.is_off()
 
-    async def on(self: any, transition: int = DEFAULT_TRANSITION) -> dict:
+    async def on(self: Any, transition: int = DEFAULT_TRANSITION) -> bool:
         """
         Turn on and return true if on.
         Safe to call without knowing current state.
@@ -87,7 +86,7 @@ class Bulb:
         return await self.is_on()
 
     async def set_brightness(
-        self: any, brightness: int, transition: int = DEFAULT_TRANSITION
+        self: Any, brightness: int, transition: int = DEFAULT_TRANSITION
     ) -> None:
         """Set brightness and returns dict.
         Assumes color has been set prior
@@ -100,7 +99,7 @@ class Bulb:
             print("[Bulb] did set brightness to", brightness)
 
     async def set_hsv(
-        self: any,
+        self: Bulb,
         hue: int,
         saturation: int,
         value: int,
@@ -147,13 +146,16 @@ async def _test_setup(verbose: int, host_bulb: str) -> Bulb:
 
 
 async def _test_hsv(bulb: Bulb, color: str = "BLUE", verbose: int = 0) -> None:
-    """Color could be used to distinguish people or actions
+    """Test for values of known color
+    Fails for unknown color string
+
     str color: must be known to HSV dictionary"""
     assert color in HSV
-    hue, saturation = HSV.get(color)[0], HSV.get(color)[1]
+    hue: int = HSV.get(color, {}).get(HUE, 0)
+    saturation: int = HSV.get(color, {}).get(SATURATION, 0)
     value = 0
     transition = 10_000
-    await bulb.set_hsv(hue, saturation, value, verbose, transition)
+    await bulb.set_hsv(hue, saturation, value, transition)
 
 
 async def _test_brightness(bulb: Bulb, verbose: int = 0) -> None:
