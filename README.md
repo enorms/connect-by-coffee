@@ -26,6 +26,10 @@ Otherwise, CLI away!
 - electric kettle in your kitchen: plug => colored light in your office: bulb
 - laundry machine: plug => (a different color) light in your office: bulb
 
+## Feature roadmap:
+
+- map across WiFi networks (currently works only one on local)
+
 # setup
 
 ## Development env
