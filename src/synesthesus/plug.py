@@ -35,7 +35,7 @@ class Plug:
 
     """
 
-    def __init__(self: Plug, host: str, verbose: int = 0) -> None:
+    def __init__(self, host: str, verbose: int = 0) -> None:
         """Does not update state since async"""
         assert "." in host
         self.plug = SmartPlug(host)

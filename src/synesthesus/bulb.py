@@ -22,7 +22,7 @@ class Bulb:
 
     """
 
-    def __init__(self: Bulb, host: str, verbose: int = 0) -> None:
+    def __init__(self, host: str, verbose: int = 0) -> None:
         assert "." in host
         self.bulb: Any = SmartBulb(host)
         self._state = dict[Any, Any]()
@@ -99,7 +99,7 @@ class Bulb:
             print("[Bulb] did set brightness to", brightness)
 
     async def set_hsv(
-        self: Bulb,
+        self,
         hue: int,
         saturation: int,
         value: int,
