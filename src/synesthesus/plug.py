@@ -16,7 +16,7 @@ Reference
 
 """
 import asyncio, atexit, sys, time
-from typing import Any
+from typing import Any, Dict
 from kasa import SmartPlug, SmartDeviceException # type: ignore
 from synesthesus.utility import parse_args
 
@@ -39,7 +39,7 @@ class Plug:
         """Does not update state since async"""
         assert "." in host
         self.plug = SmartPlug(host)
-        self._state = dict[Any, Any]()
+        self._state = Dict[Any, Any]
 
     async def update_state(self: Any, verbose: int = 0) -> dict:
         """Use like

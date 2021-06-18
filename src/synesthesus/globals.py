@@ -1,6 +1,8 @@
+from typing import Dict
+
 HUE, SATURATION, VALUE = "HUE", "SATURATION", "VALUE"
 
-HSV:dict[str,dict[str,int]] = {
+HSV:Dict[str,Dict[str,int]] = {
     "RED": {
         HUE: 0, 
         SATURATION: 100, 
