@@ -1,0 +1,12 @@
+{
+  "python.pythonPath": "venv/bin/python",
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": null
+  },
+  "python.linting.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.dictionaries": ["python"],
+  "cSpell.words": ["asyncio", "atexit", "cli", "emeter", "hsv", "synesthesus"]
+}

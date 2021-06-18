@@ -1,6 +1,6 @@
 import argparse, asyncio
 from typing import Any
-from kasa import Discover # type: ignore
+from kasa import Discover  # type: ignore
 
 
 def parse_args(prog: str, argv: list) -> Any:
@@ -44,11 +44,13 @@ def parse_args(prog: str, argv: list) -> Any:
             metavar="",
         )
     if ".py" in str(argv):
+
         argv = argv[1:]
     args = parser.parse_args([arg.lower() for arg in argv])
     if not args.__getattribute__("VERBOSE"):
         args.__setattr__("VERBOSE", 0)
     if args.__getattribute__("VERBOSE") > 0:
+
         print("[Utility] args:", args)
     return args
 
@@ -62,6 +64,7 @@ async def discover_devices(verbose: int = 1) -> dict:
         await dev.update()
         dev_type = dev.__getattribute__("device_type").__getattribute__("name")
         if verbose > 0:
+
             print(addr, dev_type)
         to_return.update({addr: dev_type})
     return to_return

@@ -17,7 +17,7 @@ Reference
 """
 import asyncio, atexit, sys, time
 from typing import Any
-from kasa import SmartPlug, SmartDeviceException # type: ignore
+from kasa import SmartPlug, SmartDeviceException  # type: ignore
 from synesthesus.utility import parse_args
 
 
@@ -67,7 +67,7 @@ class Plug:
         except [
             AssertionError,
             ConnectionResetError,
-            SmartDeviceException, # type: ignore
+            SmartDeviceException,  # type: ignore
             TypeError,
         ] as e:
             sys.exit(["exiting"])

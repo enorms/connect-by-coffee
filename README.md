@@ -35,7 +35,7 @@ Otherwise, CLI away!
 ## Development env
 
 ```sh
-python -m virtualenv venv
+python -m venv venv
 source venv/bin/activate
 pip install -e .
 ```

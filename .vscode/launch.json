@@ -1,0 +1,63 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Main: Test",
+      "type": "python",
+      "request": "launch",
+      "program": "./src/main.py",
+      "console": "integratedTerminal",
+      "args": ["-t"]
+    },
+    {
+      "name": "Main: verbose",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/synesthesus/main.py",
+      "console": "integratedTerminal",
+      "args": ["-v"]
+    },
+    {
+      "name": "Main -v -b -p",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/synesthesus/main.py",
+      "console": "integratedTerminal",
+      "args": ["-b", "10.0.0.23", "-p", "10.0.0.22", "-v"]
+    },
+    {
+      "name": "Bulb test",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/synesthesus/bulb.py",
+      "console": "integratedTerminal",
+      "args": ["-b", "10.0.0.23", "-v", "-t"]
+    },
+    {
+      "name": "Plug test",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/synesthesus/plug.py",
+      "console": "integratedTerminal",
+      "args": ["-p", "10.0.0.22", "-t"]
+    },
+    {
+      "name": "Discover",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/synesthesus/utility.py",
+      "console": "integratedTerminal",
+      "args": ["-v"]
+    },
+    {
+      "name": "Current",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
