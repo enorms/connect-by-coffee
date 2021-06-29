@@ -147,6 +147,15 @@ iwgetid
 
 iwconfig
 
+# get ip address
+
+ifconfig
+
+wlan0: inet 192.168.87.37 netmask 255.255.255.0 broadcast 192.168.87.255
+
+ip addr show
+inet 192.168.87.37/24 brd 192.168.87.255 scope global dynamic noprefixroute wlan0
+
 ## Useful files
 
 /etc/resolv.conf for name servers

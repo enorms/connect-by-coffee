@@ -139,4 +139,8 @@ Contributions are welcome. Please start by reading the material here, if there i
 
 If you don't see the device appear with `% kasa`, check that they show properly in your smartphone app. If they do, try again.
 
-Cannot discover devices. Are you scanning the same WiFi network the devices are on? Check Network settings then use `--target` flag. Example: Network > Wi-Fi > 192.168.87.46: kasa --target 192.168.87.255 discover: does discover KP115.
+_Python, Mac_
+Cannot discover devices. Are you scanning the same WiFi network the devices are on? Check Network settings then use `--target` flag. Example: Network > Wi-Fi > 192.168.87.46: kasa --target 192.168.87.255 discover: does discover KP115 (with Host: 192.168.87.41).
+
+_Rasp Pi, Go_
+Cannot discover devices. Set address as above but in `main.go`
