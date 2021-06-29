@@ -139,6 +139,14 @@ ssh pi@raspberrypi.local
 setup ssh key on pi for git commits
 https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
+# check SSID of connected WiFi network
+
+iwgetid
+
+# more details about WiFi
+
+iwconfig
+
 ## Useful files
 
 /etc/resolv.conf for name servers
