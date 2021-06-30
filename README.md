@@ -1,3 +1,5 @@
+# Overveiw
+
 Share daily activities with far away people you care about
 by passively mapping your activity here to observable things there.
 
@@ -7,7 +9,7 @@ and vice-versa.
 
 # Status
 
-Very much in development!
+Very much in development! Documentation and interaction paradigm is at an early state that rewards technical aptitude.
 
 See below for help.
 
@@ -30,7 +32,13 @@ Otherwise, CLI away!
 
 - map across WiFi networks (currently works only one on local)
 
-# setup
+# Intallation
+
+## Component Diagram
+
+[cofee machine / kettle] --> [plug w/ emeter] --local wifi--> [computer: map sensor reading to new output value] --internet--> [computer: relay value] --local wifi--> [light bulb]
+
+Essentially one direction information flow, with standard networking callbacks, and ability to ping sensors or basic control like on/off.
 
 ## Development env
 
@@ -134,6 +142,8 @@ Set the IP addresses for the device, as in -b (bulb) and -p (plug), and then go
 # Contributing
 
 Contributions are welcome. Please start by reading the material here, if there is still a question or problem, please post an issue to the repo: https://github.com/lifekaizen/connect-by-coffee
+
+If making a code suggestion, please try to match style which is based on https://google.github.io/styleguide/pyguide.html#s3.16-naming and black auto-formatting.
 
 # Troubleshooting
 

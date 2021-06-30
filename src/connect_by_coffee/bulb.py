@@ -6,8 +6,8 @@ import asyncio, atexit, sys
 from pprint import pprint
 from typing import Any, Dict, Optional
 from kasa import SmartBulb, SmartDeviceException # type: ignore
-from connect-by-coffee.utility import parse_args
-from connect-by-coffee.globals import HSV, HUE, SATURATION, VALUE
+from connect_by_coffee.utility import parse_args
+from connect_by_coffee.globals import HSV, HUE, SATURATION, VALUE
 
 DEFAULT_TRANSITION = 10_000
 

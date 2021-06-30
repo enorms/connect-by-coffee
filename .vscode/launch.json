@@ -16,7 +16,7 @@
       "name": "Main: verbose",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/connect-by-coffee/main.py",
+      "program": "${workspaceFolder}/src/connect_by_coffee/main.py",
       "console": "integratedTerminal",
       "args": ["-v"]
     },
@@ -24,7 +24,7 @@
       "name": "Main -v -b -p",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/connect-by-coffee/main.py",
+      "program": "${workspaceFolder}/src/connect_by_coffee/main.py",
       "console": "integratedTerminal",
       "args": ["-b", "10.0.0.23", "-p", "10.0.0.22", "-v"]
     },
@@ -32,7 +32,7 @@
       "name": "Bulb test",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/connect-by-coffee/bulb.py",
+      "program": "${workspaceFolder}/src/connect_by_coffee/bulb.py",
       "console": "integratedTerminal",
       "args": ["-b", "10.0.0.23", "-v", "-t"]
     },
@@ -40,7 +40,7 @@
       "name": "Plug test",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/connect-by-coffee/plug.py",
+      "program": "${workspaceFolder}/src/connect_by_coffee/plug.py",
       "console": "integratedTerminal",
       "args": ["-p", "10.0.0.22", "-t"]
     },
@@ -48,7 +48,7 @@
       "name": "Discover",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/connect-by-coffee/utility.py",
+      "program": "${workspaceFolder}/src/connect_by_coffee/utility.py",
       "console": "integratedTerminal",
       "args": ["-v"]
     },

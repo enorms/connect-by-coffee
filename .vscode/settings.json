@@ -1,12 +1,11 @@
 {
-  "python.pythonPath": "venv/bin/python",
+  "editor.formatOnSave": true,
   "python.formatting.provider": "black",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
     "editor.defaultFormatter": null
   },
   "python.linting.enabled": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "cSpell.dictionaries": ["python"],
   "cSpell.words": [
     "asyncio",
@@ -14,6 +13,7 @@
     "cli",
     "emeter",
     "hsv",
-    "connect-by-coffee"
-  ]
+    "connect_by_coffee"
+  ],
+  "python.pythonPath": "venv/bin/python"
 }

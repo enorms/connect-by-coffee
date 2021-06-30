@@ -18,7 +18,7 @@ Reference
 import asyncio, atexit, sys, time
 from typing import Any
 from kasa import SmartPlug, SmartDeviceException  # type: ignore
-from connect-by-coffee.utility import parse_args
+from connect_by_coffee.utility import parse_args
 
 
 class Plug:
