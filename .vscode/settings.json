@@ -8,5 +8,12 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "cSpell.dictionaries": ["python"],
-  "cSpell.words": ["asyncio", "atexit", "cli", "emeter", "hsv", "synesthesus"]
+  "cSpell.words": [
+    "asyncio",
+    "atexit",
+    "cli",
+    "emeter",
+    "hsv",
+    "connect-by-coffee"
+  ]
 }

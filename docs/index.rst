@@ -1,8 +1,8 @@
 ===========
-synesthesus
+connect-by-coffee
 ===========
 
-This is the documentation of **synesthesus**.
+This is the documentation of **connect-by-coffee**.
 
 .. note::
 

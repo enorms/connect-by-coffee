@@ -37,7 +37,7 @@ except ImportError:
     from sphinx import apidoc
 
 output_dir = os.path.join(__location__, "api")
-module_dir = os.path.join(__location__, "../src/synesthesus")
+module_dir = os.path.join(__location__, "../src/connect-by-coffee")
 try:
     shutil.rmtree(output_dir)
 except FileNotFoundError:
@@ -93,7 +93,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "synesthesus"
+project = "connect-by-coffee"
 copyright = "2021, Eric Norman"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -163,7 +163,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 try:
-    from synesthesus import __version__ as version
+    from connect-by-coffee import __version__ as version
 except ImportError:
     pass
 else:
@@ -228,7 +228,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "synesthesus-doc"
+htmlhelp_basename = "connect-by-coffee-doc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -245,7 +245,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "user_guide.tex", "synesthesus Documentation", "Eric Norman", "manual")
+    ("index", "user_guide.tex", "connect-by-coffee Documentation", "Eric Norman", "manual")
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

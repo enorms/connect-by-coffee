@@ -1,6 +1,6 @@
 import pytest
 
-from synesthesus.skeleton import fib, main
+from connect-by-coffee.skeleton import fib, main
 
 __author__ = "Eric Norman"
 __copyright__ = "Eric Norman"

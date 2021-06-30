@@ -14,11 +14,11 @@ import logging
 import sys
 from typing import Any
 import asyncio, argparse, atexit, sys, time
-from synesthesus.bulb import Bulb, HSV
-from synesthesus.plug import Plug
-from synesthesus.utility import parse_args
-from synesthesus.globals import HSV, HUE, SATURATION, VALUE
-from synesthesus import __version__
+from connect-by-coffee.bulb import Bulb, HSV
+from connect-by-coffee.plug import Plug
+from connect-by-coffee.utility import parse_args
+from connect-by-coffee.globals import HSV, HUE, SATURATION, VALUE
+from connect-by-coffee import __version__
 
 _logger = logging.getLogger(__name__)
 

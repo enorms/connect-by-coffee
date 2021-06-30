@@ -9,11 +9,11 @@ Install Imager: `% brew install raspberry-pi-imager`
 Use Imager to install "Rasp PI OS Lite".
 
 ```
-eric@mbp-16 synesti % ls -ls /Volumes/
+eric@mbp-16 connect-by-coffee % ls -ls /Volumes/
 total 7
 0 lrwxr-xr-x  1 root  wheel     1 Jun 25 10:54 Macintosh HD -> /
 7 drwxrwxrwx@ 1 eric  staff  3584 Feb 12  2020 boot
-eric@mbp-16 synesti % ls -ls /Volumes/boot
+eric@mbp-16 connect-by-coffee % ls -ls /Volumes/boot
 total 105106
    37 -rwxrwxrwx  1 eric  staff     18693 Jun 24  2019 COPYING.linux
     1 -rwxrwxrwx  1 eric  staff      145 May  7 15:00 issue.txt
