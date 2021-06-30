@@ -135,6 +135,7 @@ apt install git
 sudo reboot
 
 ssh pi@raspberrypi.local
+exit
 
 setup ssh key on pi for git commits
 https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
@@ -149,12 +150,15 @@ iwconfig
 
 # get ip address
 
-ifconfig
+```sh
+% ifconfig wlan0
+    inet 192.168.87.37  netmask 255.255.255.0  broadcast 192.168.87.255
+```
 
-wlan0: inet 192.168.87.37 netmask 255.255.255.0 broadcast 192.168.87.255
-
-ip addr show
+```sh
+% ip addr show wlan0
 inet 192.168.87.37/24 brd 192.168.87.255 scope global dynamic noprefixroute wlan0
+```
 
 ## Useful files
 
