@@ -129,11 +129,11 @@ LED state: True
 
 Set the IP addresses for the device, as in -b (bulb) and -p (plug), and then go
 
-`python ./src/synesthesus/main.py -b 10.0.0.23 -p 10.0.0.22 -v `
+`python ./src/connect-by-coffee/main.py -b 10.0.0.23 -p 10.0.0.22 -v `
 
 # Contributing
 
-Contributions are welcome. Please start by reading the material here, if there is still a question or problem, please post an issue to the repo: https://github.com/lifekaizen/synesthesus
+Contributions are welcome. Please start by reading the material here, if there is still a question or problem, please post an issue to the repo: https://github.com/lifekaizen/connect-by-coffee
 
 # Troubleshooting
 
